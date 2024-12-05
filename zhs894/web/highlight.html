@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Highlight</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .container img {
+            width: 100%;
+            height: auto;
+            opacity: 0;
+            transform: scale(0.8) rotate(0deg);
+            animation: fadeIn 2s forwards;
+        }
+        .container img:nth-child(1) {
+            transform: rotate(-5deg);
+        }
+        .container img:nth-child(2) {
+            transform: rotate(5deg);
+        }
+        .container img:nth-child(3) {
+            transform: rotate(-10deg);
+        }
+        .container img:nth-child(4) {
+            transform: rotate(10deg);
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="..\image/high1.jpg" alt="Image 1">
+        <img src="..\image/high2.jpg" alt="Image 2">
+        <img src="..\image/high3.jpg" alt="Image 3">
+        <img src="..\image/high4.jpg" alt="Image 4">
+    </div>
+</body>
+</html>

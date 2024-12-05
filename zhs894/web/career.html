@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            overflow: hidden;
+        }
+        .background-image {
+            background: url('../image/true.jpg') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(8px);
+            opacity: 0.7; /* 调整这个值来改变透明度 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="content">
+        <!-- Your content goes here -->
+    </div>
+</body>
+</html>
+<style>
+    .image-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 200px; /* Adjust the width as needed */
+        display: flex;
+        flex-direction: column;
+    }
+    .image-container img {
+        width: 100%;
+        height: 33.33%; /* Each image takes up one-third of the container height */
+        object-fit: cover;
+    }
+</style>
+<script>
+    document.querySelectorAll('.image-container img').forEach((img, index) => {
+        img.addEventListener('mouseover', () => {
+            document.querySelectorAll('.tooltip')[index].style.display = 'block';
+        });
+        img.addEventListener('mouseout', () => {
+            document.querySelectorAll('.tooltip')[index].style.display = 'none';
+        });
+    });
+</script>
+<div class="image-container">
+    <img src="..\image/ad414e3a81f9d86e2c1f57d5730d22df4ad554c9.jpg" alt="Image 1">
+    <img src="..\image/b812ec9eba7023556cce358765971b605430c4ac.jpg" alt="Image 2">
+    <img src="..\image/21b89efa9e2033e32773bf9667c486e356229baf.jpg" alt="Image 3">
+</div>
+<style>
+    .tooltip {
+        display: none;
+        position: absolute;
+        background-color: rgb(248, 248, 248);
+        color: rgb(0, 0, 0);
+        padding: 10px;
+        border-radius: 5px;
+        width: calc(100vw - 200px); /* Adjust the width to extend to the right edge of the page */
+        left: 200px; /* Position it to the right of the image container */
+        top: 0;
+    }
+</style>
+<script>
+    document.querySelectorAll('.image-container img').forEach((img, index) => {
+        img.addEventListener('mouseover', () => {
+            const tooltip = document.querySelectorAll('.tooltip')[index];
+            tooltip.style.display = 'block';
+            tooltip.style.top = img.getBoundingClientRect().top + 'px';
+        });
+        img.addEventListener('mouseout', () => {
+            document.querySelectorAll('.tooltip')[index].style.display = 'none';
+        });
+    });
+</script>
+<div class="tooltip">科比的 8 号生涯是一部从青涩走向成熟的热血篇章。从 1996 年开启征程，起初崭露头角，后与奥尼尔携手铸就三连冠辉煌，他在攻防两端表现卓越，关键球能力出众。“OK 组合” 矛盾渐显后，科比于 2004 年起独自率队，2006 年单场 81 分彰显超强得分火力，虽球队战绩有起伏，但他凭借坚韧不拔的斗志与精湛球技奠定巨星地位，完成从新星到传奇的华丽蜕变，也为其整个篮球生涯奠定了坚实而璀璨的基石。</div>
+<div class="tooltip">科比身披 24 号战袍的生涯，是其技术与精神高度融合且升华的阶段。他的进攻技术日臻化境，中距离跳投、背身单打与传球组织相得益彰，比赛风格从个人强攻更多转向引领团队协作。此期间，在两连冠征程里，他于关键场次屡献神勇发挥，以强大的核心领导力率队登顶。同时，其展现出的曼巴精神，如同一面旗帜，激励着队友不断奋进，也深深烙印在无数后辈心中，成为篮球世界里坚韧、执着与追求卓越的永恒象征，即便岁月流转，24 号科比的传奇依旧熠熠生辉，持续影响着一代又一代热爱篮球之人。</div>
+<div class="tooltip">科比的国家队生涯短暂却璀璨夺目。自 2007 年开启征程后，他在 2008 年北京奥运会与 2012 年伦敦奥运会上均扮演着极为关键的角色。北京奥运时，其犀利的进攻与强硬防守助力美国队重夺金牌；伦敦奥运期间，他凭借经验串联球队、带动节奏，实现卫冕。两届奥运两枚金牌，科比不仅重塑美国男篮国际篮坛统治地位，更激励后辈，其卓越表现与拼搏精神成为美国男篮的光辉印记，在世界篮球国家队交流舞台上熠熠生辉，永载史册。</div>
